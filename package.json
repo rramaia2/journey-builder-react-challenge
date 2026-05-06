@@ -1,11 +1,23 @@
 {
   "name": "frontendchallengeserver",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "author": "",
   "license": "ISC",
   "description": "",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test src/*.test.js"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "lucide-react": "^1.14.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "vite": "^8.0.10"
   }
 }

@@ -1,6 +1,9 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
+import http from 'node:http';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Create a server
 const server = http.createServer((req, res) => {
@@ -25,6 +28,7 @@ const server = http.createServer((req, res) => {
 });
 
 // Start the server on port 3000
-server.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
+const port = process.env.PORT || 3000;
+server.listen(port, '127.0.0.1', () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
